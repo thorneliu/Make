@@ -5,4 +5,6 @@ cmake_minimum_required(VERSION 2.6)
 project(helloWorld)
 
 # This tells Cmake to helloWorld.cpp and name it helloWorld
-add_executable(helloWorld helloWorld.cpp)
+add_executable(helloWorld helloWorld.cpp foo.cpp)
+
+# simply equal to : g++ -o helloWorld helloWorld.cpp foo.cpp
