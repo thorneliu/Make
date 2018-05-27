@@ -3,7 +3,7 @@ add_executable(barhppGenerator barhppGenerator.cpp)
 
 # add the custom commad to generate the source code
 add_custom_command (
-    OUTPUT ./bar.hpp
+    OUTPUT ${CMAKE_CURRENT_SRC_DIR}/bar.hpp
     COMMAND barhppGenerator
     DEPENDS barhppGenerator
 )
@@ -12,4 +12,4 @@ add_custom_command (
 aux_source_directory (. DIR_BAR_LIB_SRCS)
 
 # the link lib
-add_library (barLib ${DIR_BAR_LIB_SRCS})
+add_library (barLib ${DIR_BAR_LIB_SRCS} ${CMAKE_CURRENT_SRC_DIR}/bar.hpp)
